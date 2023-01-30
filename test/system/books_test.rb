@@ -10,9 +10,9 @@ class BooksTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Books"
   end
 
-  test "should create book" do
+  test "creating a Book" do
     visit books_url
-    click_on "New book"
+    click_on "New Book"
 
     fill_in "Number of pages", with: @book.number_of_pages
     fill_in "Title", with: @book.title
@@ -22,9 +22,9 @@ class BooksTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should update Book" do
-    visit book_url(@book)
-    click_on "Edit this book", match: :first
+  test "updating a Book" do
+    visit books_url
+    click_on "Edit", match: :first
 
     fill_in "Number of pages", with: @book.number_of_pages
     fill_in "Title", with: @book.title
@@ -34,9 +34,11 @@ class BooksTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should destroy Book" do
-    visit book_url(@book)
-    click_on "Destroy this book", match: :first
+  test "destroying a Book" do
+    visit books_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Book was successfully destroyed"
   end

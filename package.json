@@ -1,5 +1,5 @@
 {
-  "name": "it_nihongo3_rails",
+  "name": "thefirstrails",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
